@@ -1,5 +1,5 @@
 # Execute read line script
-./read
+./read.sh
 
 # Get process PID
 ps aux | grep read.sh
