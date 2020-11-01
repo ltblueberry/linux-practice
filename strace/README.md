@@ -11,6 +11,11 @@ C program
 strace -o printf.log ./printf
 ```
 
+C program ltrace
+```
+ltrace -o printf-ltrace.log ./printf
+```
+
 Python program
 ```
 strace -o print.log python ./print.py 

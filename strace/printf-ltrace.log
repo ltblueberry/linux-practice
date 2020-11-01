@@ -1,0 +1,3 @@
+__libc_start_main(0x40052d, 1, 0x7ffe16079bb8, 0x400550 <unfinished ...>
+puts("practice string")                                                                                       = 16
++++ exited (status 0) +++
