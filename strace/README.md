@@ -26,6 +26,11 @@ NodeJS program
 strace -o consolelog.log node ./consolelog.js
 ```
 
+By PID
+```
+strace -p <pid>
+```
+
 # Filtering
 ```
 strace -e trace=network <command>

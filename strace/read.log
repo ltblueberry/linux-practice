@@ -1,0 +1,35 @@
+# Execute read line script
+./read
+
+# Get process PID
+ps aux | grep read.sh
+vagrant  10940  0.0  0.2 113288  1184 pts/0    S+   15:09   0:00 /bin/bash ./read.sh
+vagrant  10946  0.0  0.1 112812   980 pts/1    R+   15:09   0:00 grep --color=auto read.sh
+
+# Strace process by PID
+strace -p 10940
+strace: Process 10940 attached
+read(0, 
+
+# Enter string
+hello
+hello
+
+# Check updates in strace output
+strace: Process 10940 attached
+read(0, "hello\n", 128)                 = 6
+write(1, "hello\n", 6)                  = 6
+ioctl(0, TCGETS, {B9600 opost isig icanon echo ...}) = 0
+read(0, 
+
+# Terminate script
+Ctrl+C
+
+# Check updates in strace output
+strace: Process 10940 attached
+read(0, "hello\n", 128)                 = 6
+write(1, "hello\n", 6)                  = 6
+ioctl(0, TCGETS, {B9600 opost isig icanon echo ...}) = 0
+read(0, 0x6e9e40, 128)                  = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+--- SIGINT {si_signo=SIGINT, si_code=SI_KERNEL} ---
++++ killed by SIGINT +++
