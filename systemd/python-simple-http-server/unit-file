@@ -1,0 +1,18 @@
+[Unit]
+Description=Python Simple HTTP Server practice systemd unit
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+User=unit-user
+Group=unit-user
+WorkingDirectory=/opt/python-simple-http-server
+ExecStart=/usr/bin/python -m SimpleHTTPServer 8844
+
+CPUShares=256
+MemoryLimit=268435456
+BlockIOWeight=200
+
+[Install]
+WantedBy=default.target
