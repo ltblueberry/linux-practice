@@ -1,0 +1,19 @@
+[Unit]
+Description=Golang Webserver practice systemd unit
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+User=unit-user
+Group=unit-user
+WorkingDirectory=/opt/golang-webserver
+ExecStart=/opt/golang-webserver/golang-webserver
+Environment=PORT=8833
+
+CPUShares=512
+MemoryLimit=268435456
+BlockIOWeight=250
+
+[Install]
+WantedBy=multi-user.target

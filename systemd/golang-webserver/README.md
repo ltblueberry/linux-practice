@@ -15,3 +15,26 @@ PORT from envs
 ```
 PORT=8282 ./golang-webserver 
 ```
+
+# Prepare
+```
+sudo mkdir -p /opt/golang-webserver
+sudo mv ./golang-webserver /opt/golang-webserver/
+sudo chown unit-user:unit-user /opt/golang-webserver
+```
+
+# Unit
+```
+sudo cp unit-file /lib/systemd/system/golang-webserver.service
+sudo systemctl daemon-reload
+sudo systemctl start golang-webserver.service
+sudo systemctl enable golang-webserver.service
+sudo systemctl status golang-webserver.service
+```
+
+Status
+![status](screenshot-status.png)
+
+![ps aux](screenshot-psaux.png)
+
+![response](screenshot-response.png)
