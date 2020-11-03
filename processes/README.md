@@ -15,6 +15,13 @@ Parent process do not handle exit of child process, child become a zombie
 ![zombie ps aux](screenshots/screenshot-zombie-psaux.png)
 
 
+## stop
+
+Process receive SIGSTOP, and then wait for SIGKILL or SIGCONT.
+
+![stop](screenshots/screenshot-stop.png)
+
+
 ## pstree
 
 ```
