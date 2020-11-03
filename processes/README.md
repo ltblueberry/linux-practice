@@ -13,6 +13,7 @@ Parent process do not handle exit of child process, child become a zombie
 
 ![zombie](screenshots/screenshot-zombie.png)
 ![zombie ps aux](screenshots/screenshot-zombie-psaux.png)
+![zombie ps aux](screenshots/screenshot-zombie-sigchld.png)
 
 
 ## stop
