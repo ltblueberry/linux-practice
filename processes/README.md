@@ -18,7 +18,7 @@ Parent process do not handle exit of child process, child become a zombie
 To kill a zombie
 
 ```
-gdb -p <parent>  # will change process state to t+ (TRACE)
+gdb -p <PPID>  # will change process state to t+ (TRACE)
 
 call wait()
 
