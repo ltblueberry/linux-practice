@@ -33,8 +33,8 @@ sudo systemctl status golang-webserver.service
 ```
 
 Status
-![status](screenshot-status.png)
+![status](screenshots/screenshot-status.png)
 
-![ps aux](screenshot-psaux.png)
+![ps aux](screenshots/screenshot-psaux.png)
 
-![response](screenshot-response.png)
+![response](screenshots/screenshot-response.png)

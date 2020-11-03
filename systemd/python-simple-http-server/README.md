@@ -16,4 +16,4 @@ sudo systemctl status python-simple-http-server.service
 ```
 
 Status
-![status](screenshot-status.png)
+![status](screenshots/screenshot-status.png)

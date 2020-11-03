@@ -4,15 +4,15 @@
 
 Create fork() in python programm, check PID, check prcesses status
 
-![fork](screenshot-fork.png)
-![ps aux](screenshot-psaux.png)
+![fork](screenshots/screenshot-fork.png)
+![ps aux](screenshots/screenshot-psaux.png)
 
 ## zombie
 
 Parent process do not handle exit of child process, child become a zombie
 
-![zombie](screenshot-zombie.png)
-![zombie ps aux](screenshot-zombie-psaux.png)
+![zombie](screenshots/screenshot-zombie.png)
+![zombie ps aux](screenshots/screenshot-zombie-psaux.png)
 
 
 ## pstree
@@ -22,4 +22,4 @@ sudo yum install psmisc
 
 pstree
 ```
-![pstree](screenshot-pstree.png)
+![pstree](screenshots/screenshot-pstree.png)
