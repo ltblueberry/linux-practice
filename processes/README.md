@@ -41,6 +41,27 @@ Process receive SIGSTOP, and then wait for SIGKILL or SIGCONT.
 ![cont](screenshots/screenshot-stop-cont.png)
 
 
+## ps
+
+![ps](screenshots/screenshot-ps.png)
+
+## proc
+
+`/proc/<pid>/`
+
+* stat - status information about the process (used by ps)
+* status - provides much of the information in /proc/[pid]/stat and /proc/[pid]/statm in a format that's easier for humans to parse
+* cwd - this is a symbolic link to the current working directory of the process
+* cmdline - the complete command line for the process, unless the process is a zombie
+* environ - file contains the initial environment that was set when the currently executing program was started via execve
+* io - contains I/O statistics for the process
+* maps - file containing the currently mapped memory regions and their access permissions
+* statm - provides information about memory usage, measured in pages
+* mem - file can be used to access the pages of a process's memory through open, read, and lseek.
+* fd - subdirectory containing one entry for each file which the process has open, named by its file descriptor, and which is a symbolic link to the actual file
+* exe - file is a symbolic link containing the actual pathname of the executed command.
+
+
 ## pstree
 
 ```
