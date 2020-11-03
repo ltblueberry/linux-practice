@@ -26,6 +26,13 @@ call wait()
 $1 = 4064 
 ```
 
+## SIGCHLD 
+
+Now program can handle incoming SIGCHLD signal 
+
+![sigchld](screenshots/screenshot-sigchld.png)
+
+
 ## stop
 
 Process receive SIGSTOP, and then wait for SIGKILL or SIGCONT.
