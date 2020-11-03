@@ -20,6 +20,7 @@ Parent process do not handle exit of child process, child become a zombie
 Process receive SIGSTOP, and then wait for SIGKILL or SIGCONT.
 
 ![stop](screenshots/screenshot-stop.png)
+![cont](screenshots/screenshot-stop-cont.png)
 
 
 ## pstree
