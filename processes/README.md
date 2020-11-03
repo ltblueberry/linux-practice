@@ -15,6 +15,16 @@ Parent process do not handle exit of child process, child become a zombie
 ![zombie ps aux](screenshots/screenshot-zombie-psaux.png)
 ![zombie sigchld](screenshots/screenshot-zombie-sigchld.png)
 
+To kill a zombie
+
+```
+gdb -p <parent>  # will change process state to t+ (TRACE)
+
+call wait()
+
+# Example output:
+$1 = 4064 
+```
 
 ## stop
 
