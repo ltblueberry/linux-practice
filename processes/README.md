@@ -49,3 +49,17 @@ sudo yum install psmisc
 pstree
 ```
 ![pstree](screenshots/screenshot-pstree.png)
+
+## lsof
+
+```
+sudo yum install lsof
+
+sudo lsof -p <PID>
+```
+
+## fuser
+
+```
+sudo fuser <path/to/file>
+```
