@@ -62,3 +62,10 @@ Check **iotop** and see what process have high disk write value
 
 ![ps](screenshots/screenshot-disk-iotop.png)
 
+
+**Troubleshooting iowait problem**
+
+1. Find high **wa** in **top**.
+2. Find which disk is being written **iostat -x 2**. Check out %util column.
+3. Find processes that cause high I/O wait with **iotop**. Get PID.
+4. Find which file caused the i/owait with **lsof -p PID**.
