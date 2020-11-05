@@ -16,6 +16,7 @@ Check **/proc/loadavg**
 
 ![ps](screenshots/screenshot-cpu-loadavg.png)
 
+
 The value for 1m avarage is growing, but there are only 2-4 active process with 125 total processes
 
 Check **vmstat** every 1 second
