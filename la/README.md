@@ -1,6 +1,7 @@
 # la
 
 ## CPU usage
+
 To produce high CPU load for 1 cpu
 ```
 stress --cpu 1 --timeout 600
@@ -31,3 +32,33 @@ Stop **stress** process, check **vmstat** again
 ![ps](screenshots/screenshot-cpu-vmstat-0.png)
 
 No more **CPU us** load
+
+## Disk usage
+
+To produce Disk load
+```
+dd if=/dev/urandom of=/tmp/iopractice bs=1024 count=5000000
+```
+
+Check **/proc/loadavg** and then **vmstat** every 1 second
+
+
+![ps](screenshots/screenshot-disk-loadavg-vmstat.png)
+
+
+loadavg value grows, cpu usage do not change a lot, but **io bo** show I/O load.
+**io bo** - blocks sent to a block device.
+
+
+Check **iostat** every 1 second
+
+![ps](screenshots/screenshot-disk-iostat.png)
+
+
+**kB_wrtn/s** - indicate the amount of data read from the device (sda) expressed in a number of blocks (kilobytes, megabytes) per second. No high avg-cpu load.
+
+
+Check **iotop** and see what process have high disk write value
+
+![ps](screenshots/screenshot-disk-iotop.png)
+
