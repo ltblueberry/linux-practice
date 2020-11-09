@@ -117,3 +117,18 @@ Start service
 sudo systemctl start php-fpm
 sudo systemctl enable php-fpm
 ```
+
+## Nginx configuration
+Change permissions for nginx
+```
+sudo chown -R nginx:nginx /var/lib/php/session
+sudo chown -R nginx:nginx /etc/zabbix/web
+
+Nginx virtual host configuration
+```
+sudo mv zabbix.conf /etc/nginx/conf.d/zabbix.conf
+
+sudo systemctl restart nginx
+```
+
+
