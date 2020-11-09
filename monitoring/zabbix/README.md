@@ -1,21 +1,9 @@
 # zabbix
 
-## Install nginx
-
-Add nginx repository
+## Install Zabbix-Server
 ```
-sudo yum install epel-release
-```
-
-Install nginx
-```
-sudo yum install nginx
-```
-
-Start service
-```
-sudo systemctl start nginx
-sudo systemctl enable nginx
+sudo rpm -Uvh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-2.el7.noarch.rpm
+sudo yum install zabbix-server-mysql zabbix-web-mysql zabbix-agent
 ```
 
 ## Install MariaDB
@@ -35,6 +23,61 @@ Run security script (Leave it blank, if you've just installed MariaDB)
 sudo mysql_secure_installation
 ```
 
+## Configure Zabbix-Server and MariaDB
+```
+### DEMO PASSWORDS
+
+shell> mysql -uroot -pvagrant
+mysql> create database zabbix character set utf8 collate utf8_bin;
+mysql> grant all privileges on zabbix.* to zabbix@localhost identified by 'zabbix';
+mysql> quit;
+```
+
+Import database scheme
+```
+### DEMO PASSWORDS
+
+sudo zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
+```
+
+Configure Zabbix server connection to database in **/etc/zabbix/zabbix_server.conf**
+```
+### DEMO PASSWORDS
+
+DBHost=localhost
+DBName=zabbix
+DBUser=zabbix
+DBPassword=zabbix
+```
+
+## Start Zabbix-Server
+
+Start service
+```
+sudo systemctl start zabbix-server
+sudo systemctl enable zabbix-server
+```
+
+
+## Install nginx
+
+Add nginx repository
+```
+sudo yum install epel-release
+```
+
+Install nginx
+```
+sudo yum install nginx
+```
+
+Start service
+```
+sudo systemctl start nginx
+sudo systemctl enable nginx
+```
+
+
 ## Install PHP-FPM
 
 Add popular repository with php up-to-date php releases
@@ -51,12 +94,11 @@ sudo yum-config-manager --enable remi-php74
 
 Install php
 ```
-sudo yum install php php-mysqlnd php-fpm
+sudo yum install php php-mysqlnd php-fpm php-mysql
 ```
 
-Change php-fpm configuration
+Change php-fpm configuration in **/etc/php-fpm.d/www.conf**
 ```
-$ sudo vim /etc/php-fpm.d/www.conf
 
 # User group
 user = nginx
