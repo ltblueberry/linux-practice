@@ -136,4 +136,49 @@ sudo systemctl restart nginx
 ![ps](screenshots/screenshot-monitoring-zabbix.png)
 
 
+## Install Zabbix-agent
 
+Add repository
+```
+sudo yum install epel-release
+sudo rpm -Uvh https://repo.zabbix.com/zabbix/4.2/rhel/7/x86_64/zabbix-release-4.2-2.el7.noarch.rpm
+```
+
+Install Zabbix agent
+```
+sudo yum install zabbix-agent zabbix-sender
+```
+
+Configure Zabbix agent in **/etc/zabbix/zabbix_agentd.conf**
+```
+Server=192.168.30.20
+ServerActive=192.168.30.20
+Hostname=Beta-server
+```
+
+Start service
+```
+sudo systemctl enable zabbix-agent
+sudo systemctl status zabbix-agent
+```
+
+Check
+```
+sudo ss -tunelp | grep 10050
+```
+
+## Add new host to Zabbix
+
+Configuration -> Hosts -> "Create host" button
+
+![ps](screenshots/screenshot-zabbix-create-host.png)
+
+
+Add templates
+
+![ps](screenshots/screenshot-zabbix-add-template.png)
+
+
+List of all hosts
+
+![ps](screenshots/screenshot-zabbix-all-hosts.png)
