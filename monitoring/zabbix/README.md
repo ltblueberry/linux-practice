@@ -245,7 +245,7 @@ Configuration -> Actions -> "Create action" button
 ![ps](screenshots/screenshot-slack-actions-host.png)
 
 
-![ps](screenshots/screenshot-slack-action-operations.png)
+![ps](screenshots/screenshot-slack-actions-operations.png)
 
 
 Stress our Beta-server to trigger the notification
