@@ -183,6 +183,7 @@ List of all hosts
 
 ![ps](screenshots/screenshot-zabbix-all-hosts.png)
 
+
 ## Monitoring
 
 Check CPU Load Graph for Beta-server for last 10 min
@@ -190,3 +191,69 @@ Check CPU Load Graph for Beta-server for last 10 min
 Monitoring -> Graphs -> Group(Linux Server) -> Host(Beta-server) -> Graph(CPU load) -> View as(Graph)
 
 ![ps](screenshots/screenshot-zabbix-graph.png)
+
+
+## Slack notification
+
+Create Slack App for Zabbix Notifications and create Incoming Webhook in some channel (zabbix-alerts)
+
+Check with curl (secrets removed)
+```
+curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/***/***/***
+```
+
+Find alert scripts directory and put there slack.sh script
+
+```
+sudo cat /etc/zabbix/zabbix_server.conf | grep AlertScriptsPath
+```
+
+Create Media Type for that script
+
+Administration -> Media types -> "Create media type" button
+
+![ps](screenshots/screenshot-slack-media-type.png)
+
+
+Create Slack user group with permissions
+
+Administration -> User groups -> "Create user group" button
+
+![ps](screenshots/screenshot-slack-user-group.png)
+
+
+![ps](screenshots/screenshot-slack-user-group-permissions.png)
+
+
+Create Slack user with Media
+
+Administration -> Users -> "Create user" button
+
+![ps](screenshots/screenshot-slack-user.png)
+
+
+![ps](screenshots/screenshot-slack-user-add-media.png)
+
+
+![ps](screenshots/screenshot-slack-user-media.png)
+
+
+Create Actions
+
+Configuration -> Actions -> "Create action" button
+
+![ps](screenshots/screenshot-slack-actions-host.png)
+
+
+![ps](screenshots/screenshot-slack-action-operations.png)
+
+
+Stress our Beta-server to trigger the notification
+
+![ps](screenshots/screenshot-slack-notification-graph.png)
+
+
+![ps](screenshots/screenshot-slack-notification-sent.png)
+
+
+![ps](screenshots/screenshot-slack-notification.png)
