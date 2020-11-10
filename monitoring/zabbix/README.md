@@ -182,3 +182,11 @@ Add templates
 List of all hosts
 
 ![ps](screenshots/screenshot-zabbix-all-hosts.png)
+
+## Monitoring
+
+Check CPU Load Graph for Beta-server for last 10 min
+
+Monitoring -> Graphs -> Group(Linux Server) -> Host(Beta-server) -> Graph(CPU load) -> View as(Graph)
+
+![ps](screenshots/screenshot-zabbix-graph.png)
