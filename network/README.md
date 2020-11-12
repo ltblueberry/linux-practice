@@ -2,7 +2,7 @@
 
 ## ip addr
 
-![pstree](screenshots/screenshot-ip-addr.png)
+![ip-addr](screenshots/screenshot-ip-addr.png)
 
 * **eth1** - Interface name
 * **mtu 1500** - maximum transmission unit, 1500, size of the largest frame/protocol-dat-unit(PDU), that can be send over this interface
@@ -18,11 +18,11 @@
 
 ## ethtool
 
-![pstree](screenshots/screenshot-ethtool.png)
+![ethtool](screenshots/screenshot-ethtool.png)
 
 Statistic
 
-![pstree](screenshots/screenshot-ethtool-s.png)
+![ethtool-s](screenshots/screenshot-ethtool-s.png)
 
 * **tx_packets** - trasmitted packets
 * **rx_packets** - received packets
@@ -32,7 +32,7 @@ Statistic
 
 ## ifconfig
 
-![pstree](screenshots/screenshot-ifconfig.png)
+![ifconfig](screenshots/screenshot-ifconfig.png)
 
 * **eth1** - Interface name
 * **flags** - Interface status
