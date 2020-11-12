@@ -14,3 +14,18 @@
 * **inet** - network layer protocol, internet ipv4
 * **192.168.30.20/24** - IP address
 * **brd 192.168.30.255** - broadcast IP address
+
+
+## ethtool
+
+![pstree](screenshots/screenshot-ethtool.png)
+
+Statistic
+
+![pstree](screenshots/screenshot-ethtool-s.png)
+
+* **tx_packets** - trasmitted packets
+* **rx_packets** - received packets
+* **tx_errors** - trasmission errors
+* **rx_errors** - teceived errors
+* **rx_missed** - recieved misses
