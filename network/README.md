@@ -66,4 +66,38 @@ ARP Cache
 * **08:00:27:6c:5d:2c** -  MAC address of the neighboring host
 * **eth1** - Interface name
 
+## IP
 
+IP address - 4 octets, total 8+8+8+8 = 32 Bits
+Contains of a network address, and a host address
+
+```
+11000000.10101000.01111011.10000100 -- IP address (192.168.123.132) 
+11111111.11111111.11111111.00000000 -- Subnet mask (255.255.255.0)
+```
+means
+```
+11000000.10101000.01111011.00000000 -- Network address (192.168.123.0) 
+00000000.00000000.00000000.10000100 -- Host address (000.000.000.132)
+```
+
+Network classes
+* **Class A** - first octet 0-127, default subnet mask 255.0.0.0
+* **Class B** - first octet 128-191, default subnet mask 255.255.0.0
+* **Class C** - first octet 192-223, default subnet mask 255.255.255.0
+
+IP Packet = Header + Payload(data)
+
+Main fields of IP Header: 
+* Source IP Address - **32 bit**
+* Destination IP Address  - **32 bit**
+* Version(IPv4) - **4 bit**
+* Protocol(TCP) - **4 bit**
+* Total Length(all IP packet, header+payload) - **16 bit**
+
+IP packet may be fragmented, if packet size is bigget than MTU and packet header flag DF is set to 0
+
+IP message types:
+* **unicast** - one to one
+* **broadcast** - one to all
+* **multicast** - one to several
