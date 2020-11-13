@@ -101,3 +101,28 @@ IP message types:
 * **unicast** - one to one
 * **broadcast** - one to all
 * **multicast** - one to several
+
+
+## netstat
+
+Show all TCP and UDP listening sockets, PID and program
+
+Flags:
+* **-p** - show the PID and name of the program to which each socket belongs
+* **-l** - show only listening sockets
+* **-u** - show UDP
+* **-n** - show numerical addresses instead of trying to determine symbolic host, port or user names
+* **-t** - show TCP
+
+![netstat](screenshots/screenshot-netstat.png)
+
+* **Proto** - the protocol (tcp, udp, udpl, raw) used by the socket
+* **Recv-Q** - the count of bytes not copied by the user program connected to this socket
+* **Send-Q** - the count of bytes not acknowledged by the remote host
+* **Local Address** - address and port number of the local end of the socket
+* **Foreign Address** - address and port number of the remote end of the socket
+* **State** - the state of the socket
+    * **LISTEN** - the socket is listening for incoming connections
+    * **ESTABLISHED** - the socket has an established connection
+* **PID/Program name** - slash-separated  pair  of  the process id (PID) and process name of the process that owns the socket
+
