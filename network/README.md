@@ -126,3 +126,39 @@ Flags:
     * **ESTABLISHED** - the socket has an established connection
 * **PID/Program name** - slash-separated  pair  of  the process id (PID) and process name of the process that owns the socket
 
+
+## TCP
+
+TCP Connection (with example sequence number)
+1) Client send SYN, SEQ=100 to Server
+2) Server receive SYN
+3) Server send SYN+ACK, SEQ=200,ACK=101 to Client
+4) Client receive SYN+ACK
+5) Client send ACK, ACK=201 to Server
+6) Server receive ACK
+7) connection established
+
+Main TCP flags:
+* **ACK** - acknowledgment flag
+* **RST** - reset flag
+* **SYN** - synchronisation flag
+* **FIN** - finish flag
+
+## tcpdump
+
+TCP connection establishment and termination
+
+```
+sudo tcpdump -i lo -nnn port 6666
+
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on lo, link-type EN10MB (Ethernet), capture size 262144 bytes
+
+13:59:26.715471 IP 127.0.0.1.46114 > 127.0.0.1.6666: Flags [S], seq 3399179448, win 43690, options [mss 65495,sackOK,TS val 6513759 ecr 0,nop,wscale 6], length 0
+13:59:26.715483 IP 127.0.0.1.6666 > 127.0.0.1.46114: Flags [S.], seq 753182710, ack 3399179449, win 43690, options [mss 65495,sackOK,TS val 6513759 ecr 6513759,nop,wscale 6], length 0
+13:59:26.715493 IP 127.0.0.1.46114 > 127.0.0.1.6666: Flags [.], ack 1, win 683, options [nop,nop,TS val 6513759 ecr 6513759], length 0
+
+14:00:01.011115 IP 127.0.0.1.46114 > 127.0.0.1.6666: Flags [F.], seq 1, ack 1, win 683, options [nop,nop,TS val 6548055 ecr 6513759], length 0
+14:00:01.011330 IP 127.0.0.1.6666 > 127.0.0.1.46114: Flags [F.], seq 1, ack 2, win 683, options [nop,nop,TS val 6548055 ecr 6548055], length 0
+14:00:01.011338 IP 127.0.0.1.46114 > 127.0.0.1.6666: Flags [.], ack 2, win 683, options [nop,nop,TS val 6548055 ecr 6548055], length 0
+```
