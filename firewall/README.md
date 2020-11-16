@@ -45,3 +45,16 @@ Check if service and interface were added to zone
 **check changes in iptables IN_public_allow**
 
 ![query](screenshots/screenshot-firewall-cmd-IN_public_allow.png)
+
+
+Add new zone for mysql and add source
+
+![query](screenshots/screenshot-firewall-cmd-new-zone.png)
+
+
+Check with curl from two hosts
+
+![query](screenshots/screenshot-firewall-cmd-new-zone-check.png)
+
+
+
