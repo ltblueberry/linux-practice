@@ -24,9 +24,13 @@ Curl check
 
 Add port forwarding (3307->3306)
 
-![mysql-service-curl](screenshots/screenshot-firewall-cmd-forward.png)
+![port-forward](screenshots/screenshot-firewall-cmd-forward.png)
 
 
 Curl check
 
-![mysql-service-curl](screenshots/screenshot-firewall-cmd-forward-curl.png)
+![port-forward-curl](screenshots/screenshot-firewall-cmd-forward-curl.png)
+
+Check if service and interface were added to zone
+
+![query](screenshots/screenshot-firewall-cmd-query.png)
