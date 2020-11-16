@@ -31,6 +31,12 @@ Curl check
 
 ![port-forward-curl](screenshots/screenshot-firewall-cmd-forward-curl.png)
 
+
 Check if service and interface were added to zone
 
 ![query](screenshots/screenshot-firewall-cmd-query.png)
+
+
+**/usr/lib/firewalld/services/*.xml**
+
+![query](screenshots/screenshot-firewall-cmd-service-xml.png)
