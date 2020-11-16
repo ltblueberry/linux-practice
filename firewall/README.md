@@ -42,6 +42,6 @@ Check if service and interface were added to zone
 ![query](screenshots/screenshot-firewall-cmd-service-xml.png)
 
 
-** check changes in iptables IN_public_allow**
+**check changes in iptables IN_public_allow**
 
 ![query](screenshots/screenshot-firewall-cmd-IN_public_allow.png)
