@@ -73,3 +73,8 @@ Current configuration
 sudo sysctl -a | grep conntrack
 ```
 **net.nf_conntrack_max = 15588** - change for highload to bigger value
+
+Limit connections from one source (with iptables)
+```
+iptables -A INPUT -p tcp --syn --dport 8080 -m connlimit --conlimit-above 3 -j REJECT
+```
