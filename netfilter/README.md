@@ -57,4 +57,19 @@ Check with curl from two hosts
 ![query](screenshots/screenshot-firewall-cmd-new-zone-check.png)
 
 
+## connections
+Connections states
+```
+sudo less /proc/net/nf_conntrack
+```
 
+Count
+```
+sudo less /proc/net/nf_conntrack | wc -l
+```
+
+Current configuration
+```
+sudo sysctl -a | grep conntrack
+```
+**net.nf_conntrack_max = 15588** - change for highload to bigger value
