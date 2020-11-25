@@ -39,22 +39,22 @@ Check if service and interface were added to zone
 
 **/usr/lib/firewalld/services/*.xml**
 
-![query](screenshots/screenshot-firewall-cmd-service-xml.png)
+![service-xml](screenshots/screenshot-firewall-cmd-service-xml.png)
 
 
 **check changes in iptables IN_public_allow**
 
-![query](screenshots/screenshot-firewall-cmd-IN_public_allow.png)
+![iptables](screenshots/screenshot-firewall-cmd-IN_public_allow.png)
 
 
 Add new zone for mysql and add source
 
-![query](screenshots/screenshot-firewall-cmd-new-zone.png)
+![new-zone](screenshots/screenshot-firewall-cmd-new-zone.png)
 
 
 Check with curl from two hosts
 
-![query](screenshots/screenshot-firewall-cmd-new-zone-check.png)
+![new-zone-check](screenshots/screenshot-firewall-cmd-new-zone-check.png)
 
 
 ## connections
